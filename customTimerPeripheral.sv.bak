@@ -1,0 +1,10 @@
+module customTimerPeripheral (
+	
+	input logic clk, reset,
+	input logic address, // 0 for CTRL reg or 1 for COUNTER REG
+	input logic [31:0] writedata,
+	output logic [31:0] readdata
+
+);
+
+	
