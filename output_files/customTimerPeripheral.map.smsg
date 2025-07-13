@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at customTimerPeripheral.sv(15): always construct contains both blocking and non-blocking assignments File: C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/customTimerPeripheral.sv Line: 15
