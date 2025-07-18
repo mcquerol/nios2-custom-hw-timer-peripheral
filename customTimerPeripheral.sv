@@ -1,43 +1,45 @@
 module customTimerPeripheral (
-	
-	input logic clk, reset,
-	input logic address, // 0 for CTRL reg or 1 for COUNTER REG
-	input logic read,
-	input logic write,
-	input logic [31:0] writedata,
-	output logic [31:0] readdata
-
+    input  logic        clk,
+    input  logic        reset,
+    input  logic        address,      // 0 = CTRL, 1 = COUNTER
+    input  logic        read,
+    input  logic        write,
+    input  logic [31:0] writedata,
+    output logic [31:0] readdata
 );
 
-	logic [31:0] CTRL;
-	logic [31:0] COUNTER;
-	
-	always_ff @(posedge clk) begin
-	
-		if(reset == 1'b0) begin
-			COUNTER <= 32'b0;
-		end else if(CTRL[0] == 1'b0) begin //if 0th bit of control register is 0 then reset counter else keep counting
-			COUNTER <= 32'b0;
-		end else begin
-			COUNTER <= COUNTER + 1;
-		end
-		
-		if(write == 1'b1 && address == 1'b0) begin
-			CTRL = writedata;
-		end
-	
-	end
-	
-	always_comb begin
-		
-		
-		case (address)
-        0: readdata = CTRL;
-        1: readdata = COUNTER;
-        default: readdata = 32'hDEADDEAD; // cover all cases
-    endcase
-	
-	end
-	
+    logic [31:0] CTRL;
+    logic [31:0] COUNTER;
+
+    always_ff @(posedge clk) begin
+        if (!reset) begin
+            COUNTER <= 32'd0;
+            CTRL    <= 32'd0;
+        end else begin
+            // Write to CTRL register
+            if (write && address == 1'b0) begin
+                CTRL <= writedata;
+            end
+
+            // Counting logic
+            if (CTRL[0]) begin
+                COUNTER <= COUNTER + 1;
+            end else begin
+                COUNTER <= 32'd0;
+            end
+        end
+    end
+
+    always_comb begin
+        if (read) begin
+            case (address)
+                1'b0: readdata = CTRL;
+                1'b1: readdata = COUNTER;
+                default: readdata = 32'hDEADDEAD;
+            endcase
+        end else begin
+            readdata = 32'd0;  // Default when not reading
+        end
+    end
 
 endmodule
