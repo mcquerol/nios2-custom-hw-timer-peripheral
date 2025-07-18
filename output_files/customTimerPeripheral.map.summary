@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Jul 13 20:30:23 2025
+Analysis & Synthesis Status : Successful - Fri Jul 18 21:24:53 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : customTimerPeripheral
 Top-level Entity Name : customTimerPeripheral
 Family : MAX 10
 Total logic elements : 98
-    Total combinational functions : 66
+    Total combinational functions : 98
     Dedicated logic registers : 64
 Total registers : 64
 Total pins : 69

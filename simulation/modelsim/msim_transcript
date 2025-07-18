@@ -1,0 +1,53 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do customTimerPeripheral_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral {C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/customTimerPeripheral.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:38:42 on Jul 18,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral" C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/customTimerPeripheral.sv 
+# -- Compiling module customTimerPeripheral
+# 
+# Top level modules:
+# 	customTimerPeripheral
+# End time: 21:38:42 on Jul 18,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral {C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/customTimerPeripheral_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:38:42 on Jul 18,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral" C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/customTimerPeripheral_tb.sv 
+# -- Compiling module customTimerPeripheral_tb
+# 
+# Top level modules:
+# 	customTimerPeripheral_tb
+# End time: 21:38:42 on Jul 18,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  customTimerPeripheral_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" customTimerPeripheral_tb 
+# Start time: 21:38:42 on Jul 18,2025
+# Loading sv_std.std
+# Loading work.customTimerPeripheral_tb
+# Loading work.customTimerPeripheral
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 50000 ns
+# Simulation starting...
+# Counter value before reset:        101
+# Counter value after CTRL reset:          0
+# Counter value after re-enable:        251
+# End time: 21:39:54 on Jul 18,2025, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 0

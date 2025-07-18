@@ -1,5 +1,5 @@
 Analysis & Synthesis report for customTimerPeripheral
-Sun Jul 13 20:30:23 2025
+Fri Jul 18 21:24:53 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -18,7 +18,6 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  10. Post-Synthesis Netlist Statistics for Top Partition
  11. Elapsed Time Per Partition
  12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,13 +43,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 13 20:30:23 2025       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 18 21:24:53 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; customTimerPeripheral                       ;
 ; Top-level Entity Name              ; customTimerPeripheral                       ;
 ; Family                             ; MAX 10                                      ;
 ; Total logic elements               ; 98                                          ;
-;     Total combinational functions  ; 66                                          ;
+;     Total combinational functions  ; 98                                          ;
 ;     Dedicated logic registers      ; 64                                          ;
 ; Total registers                    ; 64                                          ;
 ; Total pins                         ; 69                                          ;
@@ -182,14 +181,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Estimated Total logic elements              ; 98        ;
 ;                                             ;           ;
-; Total combinational functions               ; 66        ;
+; Total combinational functions               ; 98        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 32        ;
-;     -- <=2 input functions                  ; 34        ;
+;     -- 4 input functions                    ; 32        ;
+;     -- 3 input functions                    ; 1         ;
+;     -- <=2 input functions                  ; 65        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 35        ;
+;     -- normal mode                          ; 67        ;
 ;     -- arithmetic mode                      ; 31        ;
 ;                                             ;           ;
 ; Total registers                             ; 64        ;
@@ -202,8 +201,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 64        ;
-; Total fan-out                               ; 456       ;
-; Average fan-out                             ; 1.70      ;
+; Total fan-out                               ; 553       ;
+; Average fan-out                             ; 1.84      ;
 +---------------------------------------------+-----------+
 
 
@@ -212,7 +211,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name    ; Entity Name           ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------+-----------------------+--------------+
-; |customTimerPeripheral     ; 66 (66)             ; 64 (64)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |customTimerPeripheral ; customTimerPeripheral ; work         ;
+; |customTimerPeripheral     ; 98 (98)             ; 64 (64)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |customTimerPeripheral ; customTimerPeripheral ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -232,13 +231,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |customTimerPeripheral|COUNTER[23] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |customTimerPeripheral|COUNTER[7] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |customTimerPeripheral|CTRL[24]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |customTimerPeripheral|readdata   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 
 
 +-----------------------------------------------------+
@@ -250,16 +251,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cycloneiii_ff         ; 64                          ;
 ;     ENA               ; 32                          ;
 ;     SCLR              ; 32                          ;
-; cycloneiii_lcell_comb ; 66                          ;
+; cycloneiii_lcell_comb ; 98                          ;
 ;     arith             ; 31                          ;
 ;         2 data inputs ; 31                          ;
-;     normal            ; 35                          ;
+;     normal            ; 67                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 32                          ;
+;         2 data inputs ; 33                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 1.82                        ;
+; Average LUT depth     ; 1.84                        ;
 +-----------------------+-----------------------------+
 
 
@@ -278,7 +280,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 13 20:30:11 2025
+    Info: Processing started: Fri Jul 18 21:24:45 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off customTimerPeripheral -c customTimerPeripheral
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -288,23 +290,14 @@ Info (12127): Elaborating entity "customTimerPeripheral" for the top level hiera
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "read" File: C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/customTimerPeripheral.sv Line: 5
 Info (21057): Implemented 167 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 37 input pins
     Info (21059): Implemented 32 output pins
     Info (21061): Implemented 98 logic cells
-Info (144001): Generated suppressed messages file C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/output_files/customTimerPeripheral.map.smsg
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4849 megabytes
-    Info: Processing ended: Sun Jul 13 20:30:23 2025
-    Info: Elapsed time: 00:00:12
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Fri Jul 18 21:24:53 2025
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:18
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/mateo/Desktop/NIos-2-custom-HW_timer-peripheral/output_files/customTimerPeripheral.map.smsg.
 
 
